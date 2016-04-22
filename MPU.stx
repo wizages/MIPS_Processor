@@ -17,22 +17,23 @@ Total CPU time to Xst completion: 0.10 secs
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/type_definitions.vhd" in Library work.
-Architecture type_definitions of Entity type_definitions is up to date.
+Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/type_file.vhd" in Library work.
+Architecture types of Entity types is up to date.
+Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" in Library work.
+Architecture behavioral of Entity alu is up to date.
 Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/MPU.vhd" in Library work.
 Entity <mpu> compiled.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/MPU.vhd" Line 32. Undefined symbol 'reg_file_type'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/MPU.vhd" Line 32. reg_file_type: Undefined symbol (last report in this block)
+Entity <mpu> (Architecture <behavioral>) compiled.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> 
 
-Total memory usage is 261372 kilobytes
+Total memory usage is 261052 kilobytes
 
-Number of errors   :    2 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

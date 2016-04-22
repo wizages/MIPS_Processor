@@ -4,108 +4,34 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/type_definitions.vhd" in Library work.
-Package <type_definitions> compiled.
-Package body <type_definitions> compiled.
+Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/type_file.vhd" in Library work.
+Architecture types of Entity types is up to date.
 Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" in Library work.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 18. Undefined symbol 'reg_file_type'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 18. reg_file_type: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3010 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 30. Entity ALU does not exist.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 33. Undefined symbol 'ALU_state_type'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 33. ALU_state_type: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 34. Undefined symbol 'unsigned'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 34. unsigned: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 35. Undefined symbol 'std_logic'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 35. std_logic: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 40. Undefined symbol 'clk'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 40. clk: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 44. Undefined symbol 'state'.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 44. Undefined symbol 'state_next'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 44. state_next: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 45. Undefined symbol 'done'.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 45. Undefined symbol 'done_next'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 45. done_next: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 46. Undefined symbol 'ready'.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 46. Undefined symbol 'ready_next'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 46. ready_next: Undefined symbol (last report in this block)
-WARNING:HDLParsers:1406 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 40. No sensitivity list and no wait in the process
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 52. Undefined symbol 'state'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 52. state: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 52. Undefined symbol 'result'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 52. result: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 52. Undefined symbol 'done_tick'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 52. done_tick: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 56. Undefined symbol 'state_next'.
-ERROR:HDLParsers:3313 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 56. Undefined symbol 'idle'.  Should it be: dle?
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 56. idle: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 58. Undefined symbol 'ready_next'.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 59. Undefined symbol 'done_next'.
-ERROR:HDLParsers:808 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 64. = can not have such operands in this context.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 65. state_next: Undefined symbol (last report in this block)
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 66. ready_next: Undefined symbol (last report in this block)
-ERROR:HDLParsers:808 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 67. = can not have such operands in this context.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 68. Undefined symbol 'ALU_add'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 68. ALU_add: Undefined symbol (last report in this block)
-ERROR:HDLParsers:808 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 69. = can not have such operands in this context.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 70. Undefined symbol 'ALU_sub'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 70. ALU_sub: Undefined symbol (last report in this block)
-ERROR:HDLParsers:808 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 71. = can not have such operands in this context.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 72. Undefined symbol 'ALU_and'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 72. ALU_and: Undefined symbol (last report in this block)
-ERROR:HDLParsers:808 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 73. = can not have such operands in this context.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 74. Undefined symbol 'ALU_Or'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 74. ALU_Or: Undefined symbol (last report in this block)
-ERROR:HDLParsers:808 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 77. = can not have such operands in this context.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 78. Undefined symbol 'ALU_beq'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 78. ALU_beq: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 82. Undefined symbol 'result_reg'.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 82. Undefined symbol 'registers'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 82. registers: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 82. Undefined symbol 'unsigned'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 82. unsigned: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 82. Undefined symbol 'instruction'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 82. instruction: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 83. Undefined symbol 'op_complete'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 83. op_complete: Undefined symbol (last report in this block)
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 86. result_reg: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 101. Undefined symbol 'std_logic_vector'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 101. std_logic_vector: Undefined symbol (last report in this block)
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 102. done_next: Undefined symbol (last report in this block)
-WARNING:HDLParsers:1406 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 52. No sensitivity list and no wait in the process
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 108. Undefined symbol 'done'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 108. done: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 111. Undefined symbol 'done_tick'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 113. done_tick: Undefined symbol (last report in this block)
-WARNING:HDLParsers:1406 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 108. No sensitivity list and no wait in the process
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 117. Undefined symbol 'ready'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 117. ready: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 119. Undefined symbol 'done'.
-ERROR:HDLParsers:3312 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 120. Undefined symbol 'ready_tick'.
-ERROR:HDLParsers:1209 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 122. ready_tick: Undefined symbol (last report in this block)
-WARNING:HDLParsers:1406 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 117. No sensitivity list and no wait in the process
+Entity <alu> compiled.
+Entity <ALU> (Architecture <Behavioral>) compiled.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> 
 
-Total memory usage is 261244 kilobytes
+Total memory usage is 261180 kilobytes
 
-Number of errors   :   71 (   0 filtered)
-Number of warnings :    5 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

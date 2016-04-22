@@ -1,2 +1,2 @@
-vhdl work "type_definitions.vhd"
+vhdl work "type_file.vhd"
 vhdl work "ALU.vhd"
