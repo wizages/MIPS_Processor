@@ -10,6 +10,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
+use type_definitions.all;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -19,16 +20,16 @@ use IEEE.NUMERIC_STD.ALL;
 entity MPU is
 	PORT(
 			input_byte : in std_logic_vector(7 downto 0);
-			load_byte : in std_logic
+			load_byte : in std_logic;
+			clk : in std_logic
 		);
 end MPU;
 
 architecture Behavioral of MPU is
 
-type reg_file is array ( 31 downto 0) of std_logic_vector (31 downto 0);
 
 -- the 32 , 32 bit registers
-signal reg, reg_next : reg_file;
+signal reg, reg_next : reg_file_type;
 --the current instruction register
 signal instruction_reg, instruction_reg_next : std_logic_vector (31 downto 0);
 --the program counter
