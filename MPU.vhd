@@ -36,22 +36,36 @@ architecture Behavioral of MPU is
 -- the 32 , 32 bit registers
 signal reg, reg_next : reg_file_type;
 --the current instruction register
-signal instruction_reg, instruction_reg_next : std_logic_vector (31 downto 0);
+signal instruction_reg, instruction_reg_next : std_logic_vector (31 downto 0) := (others =>'0');
 --the program counter
-signal pc,pc_next : unsigned(31 downto 0);
+signal pc,pc_next : unsigned(31 downto 0) := (others =>'0');
 signal ALU_done_tick , ALU_ready_tick: std_logic;
-signal ALU_result : std_logic_vector(31 downto 0);
+signal ALU_result : std_logic_vector(31 downto 0) := (others =>'0');
+type MPU_states is (idle,load1,load1_wait,load_2,load2_wait,load_3,
+					load3_wait,load4,load4_wait,op,op_wait,disp1,disp2,disp3,disp4);
+signal state, state_next : MPU_states := idle;
 
 begin
 
+process (clk)
+begin
+	if(rising_edge(clk)) then
+		state <= state_next;
+		pc <= pc_next;
+		reg <= reg_next;
+		instruction_reg <= instruction_reg_next;
+	end if;
+end process;
+
+--declare the alu, input an instruction and output a result on done tick
 ALU : entity work.ALU(Behavioral)
-	
 	port map ( 	registers => reg,
 					instruction => instruction_reg,
 					result => ALU_result,
 					ready_tick => ALU_ready_tick,
 					done_tick => ALU_done_tick,
 					clk => clk);
+
 
 end Behavioral;
 
