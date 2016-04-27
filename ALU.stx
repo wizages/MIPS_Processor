@@ -1,34 +1,35 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/HDL/MIPS_Processor/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.23 secs
  
---> Parameter xsthdpdir set to C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst
+--> Parameter xsthdpdir set to C:/HDL/MIPS_Processor/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/type_file.vhd" in Library work.
+Compiling vhdl file "C:/HDL/MIPS_Processor/type_file.vhd" in Library work.
 Architecture types of Entity types is up to date.
-Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" in Library work.
-Architecture behavioral of Entity alu is up to date.
+Compiling vhdl file "C:/HDL/MIPS_Processor/ALU.vhd" in Library work.
+Entity <alu> compiled.
+Entity <alu> (Architecture <behavioral>) compiled.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total CPU time to Xst completion: 0.37 secs
  
 --> 
 
-Total memory usage is 261052 kilobytes
+Total memory usage is 258656 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

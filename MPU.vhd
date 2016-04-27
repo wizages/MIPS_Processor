@@ -24,8 +24,8 @@ entity MPU is
 			input_byte : in std_logic_vector(7 downto 0);
 			load_byte : in std_logic;
 			clk : in std_logic;
-			reset : in std_logic
-			displayOut : out std_logic_vector(7 downto 0);
+			reset : in std_logic;
+			displayOut : out std_logic_vector(7 downto 0)
 		);
 end MPU;
 
@@ -44,28 +44,29 @@ signal pc,pc_next : unsigned(31 downto 0) := (others =>'0');
 signal db : std_logic;
 signal ALU_done_tick , ALU_ready_tick: std_logic;
 signal ALU_result : std_logic_vector(31 downto 0) := (others =>'0');
-signal displayResult; : std_logic_vector(31 downto 0) := (others=>'0');
-type MPU_states is (idle,load1,load1_wait,load_2,load2_wait,load_3,
+signal displayResult : std_logic_vector(31 downto 0) := (others=>'0');
+type MPU_states is (load1,load1_wait,load2,load2_wait,load3,
 					load3_wait,load4,load4_wait,op,op_wait,disp1,disp1_wait,disp2,disp2_wait,disp3,disp3_wait,disp4,disp4_wait);
-signal state, state_next : MPU_states := idle;
+signal state, state_next : MPU_states := load1;
 
 begin
 
 process (clk,reset)
 begin
-	if(rising_edge(clk)) then
+	if(reset = '1' and rising_edge(clk)) then
+		state <= load1;
+		pc <= (others=>'0');
+		reg <= (others=>(others=>'0'));
+		instruction_reg <= (others=>'0');
+		
+	elsif(rising_edge(clk)) then
 		state <= state_next;
 		pc <= pc_next;
 		reg <= reg_next;
 		instruction_reg <= instruction_reg_next;
 	end if;
 	
-	if(reset = '1') then
-		state <= idle;
-		pc <='0';
-		reg <= (others=>'0');
-		instruction_reg <= (others=>'0');
-	end if;
+	
 end process;
 
 --declare the alu, input an instruction and output a result on done tick
@@ -79,17 +80,15 @@ ALU : entity work.ALU(Behavioral)
 					
 Debounce : entity work.debounce(Behavioral) port map ( clk => clk, reset => reset, sw => load_byte, db => db);
 					
-process(state,instruction_reg,reg,pc)
+process(state,instruction_reg,ALU_ready_tick,ALU_done_tick)
 begin			
 					
 case (state) is
 
-	when idle =>
-	-- No idea what this is I assume we just do nothing but jump into load1 after a button press?
 	when load1 => 
 		if db='1' then 
 			state_next <= load1_wait;
-			pc(31 downto 24) <= input_byte;
+			pc(31 downto 24) <= unsigned(input_byte);
 		end if;
 	when load1_wait =>
 		if db='0' then
@@ -98,7 +97,7 @@ case (state) is
 	when load2 =>
 		if db='1' then
 			state_next <= load2_wait;
-			pc(23 downto 16) <= input_byte;
+			pc(23 downto 16) <= unsigned(input_byte);
 		end if;
 	when load2_wait =>
 		if db='0' then
@@ -107,7 +106,7 @@ case (state) is
 	when load3 =>
 		if db='1' then
 			state_next <= load3_wait;
-			pc(15 downto 8) <= input_byte;
+			pc(15 downto 8) <= unsigned(input_byte);
 		end if;
 	when load3_wait =>
 		if db='0' then
@@ -116,7 +115,7 @@ case (state) is
 	when load4 =>
 		if db='1' then
 			state_next <= load4_wait;
-			pc(7 downto 0) <= input_byte;
+			pc(7 downto 0) <= unsigned(input_byte);
 		end if;
 	when load4_wait =>
 		if db='0' then
@@ -124,7 +123,7 @@ case (state) is
 		end if;
 	when op =>
 		if  ALU_ready_tick='1' then		
-			instruction_reg <= pc;
+			instruction_reg <= std_logic_vector(pc);
 			state_next <= op_wait;
 		end if;
 	when op_wait =>
@@ -166,7 +165,7 @@ case (state) is
 		end if;
 	when disp4_wait=>
 		if db='0' then
-			state_next <= idle;
+			state_next <= load1;
 		end if;
 end case;
 end process;

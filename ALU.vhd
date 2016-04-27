@@ -16,10 +16,10 @@ entity ALU is
 	PORT (
 				registers : reg_file_type;
 				instruction : in std_logic_vector(31 downto 0);
+				clk : in std_logic;
 				result : out std_logic_vector (31 downto 0);
 				ready_tick : out std_logic;
-				done_tick : out std_logic;
-				clk : in std_logic
+				done_tick : out std_logic
 			);
 
 end ALU;
@@ -29,22 +29,19 @@ architecture Behavioral of ALU is
 
 signal state, state_next : ALU_state_type;
 signal result_reg : unsigned(31 downto 0);
-signal done,done_next : std_logic;
-signal ready,ready_next : std_logic;
+signal done_next,ready_next : std_logic;
 
 begin
 
-process (clk)
-begin
-
-if(rising_edge(clk) ) then
-	state <= state_next;
-	done <= done_next;
-	ready <= ready_next;
-end if;
-
-
+process(clk)
+	begin
+		if (clk'event and clk='1') then
+			state <= state_next;
+			done_tick <= done_next;
+			ready_tick <=ready_next;
+		end if;
 end process;
+
 
 process(state,instruction)
 begin
@@ -52,15 +49,13 @@ begin
 --insert defaults
 state_next <= idle;
 result <= (others => '0');
-ready_next <= '0';
 done_next <='0';
-
+ready_next <='0';
 	case state is
-
 		when idle =>	
 			if(instruction = "00000000000000000000000000000000") then
 				state_next <= idle;
-				ready_next <='1';
+				ready_next <= '1';
 			elsif (instruction ( 5 downto 0) = "100000") then
 				state_next <= ALU_add;
 			elsif (instruction ( 5 downto 0) = "100010") then
@@ -98,27 +93,9 @@ done_next <='0';
 		when op_complete =>
 			result <= std_logic_vector(result_reg);
 			done_next <='1';
+			ready_next <='1';
 	end case;
 
-end process;
-
--- done tick process
-process(done)
-begin
-if(rising_edge(done)) then
-	done_tick <= '1';
-else
-	done_tick <='0';
-end if;
-end process;
-
-process(ready)
-begin
-if(rising_edge(done)) then
-	ready_tick <= '1';
-else
-	ready_tick <='0';
-end if;
 end process;
 
 

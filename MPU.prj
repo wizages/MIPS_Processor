@@ -1,3 +1,4 @@
 vhdl work "type_file.vhd"
+vhdl work "debounce.vhd"
 vhdl work "ALU.vhd"
 vhdl work "MPU.vhd"
