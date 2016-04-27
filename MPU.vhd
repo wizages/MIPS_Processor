@@ -25,6 +25,7 @@ entity MPU is
 			load_byte : in std_logic;
 			clk : in std_logic;
 			reset : in std_logic
+			displayOut : out std_logic_vector(7 downto 0);
 		);
 end MPU;
 
@@ -40,8 +41,10 @@ signal reg, reg_next : reg_file_type;
 signal instruction_reg, instruction_reg_next : std_logic_vector (31 downto 0) := (others =>'0');
 --the program counter
 signal pc,pc_next : unsigned(31 downto 0) := (others =>'0');
+signal db : std_logic;
 signal ALU_done_tick , ALU_ready_tick: std_logic;
 signal ALU_result : std_logic_vector(31 downto 0) := (others =>'0');
+signal displayResult; : std_logic_vector(31 downto 0) := (others=>'0');
 type MPU_states is (idle,load1,load1_wait,load_2,load2_wait,load_3,
 					load3_wait,load4,load4_wait,op,op_wait,disp1,disp1_wait,disp2,disp2_wait,disp3,disp3_wait,disp4,disp4_wait);
 signal state, state_next : MPU_states := idle;
@@ -74,31 +77,97 @@ ALU : entity work.ALU(Behavioral)
 					done_tick => ALU_done_tick,
 					clk => clk);
 					
+Debounce : entity work.debounce(Behavioral) port map ( clk => clk, reset => reset, sw => load_byte, db => db);
+					
 process(state,instruction_reg,reg,pc)
 begin			
 					
 case (state) is
 
 	when idle =>
-	when load1 =>
+	-- No idea what this is I assume we just do nothing but jump into load1 after a button press?
+	when load1 => 
+		if db='1' then 
+			state_next <= load1_wait;
+			pc(31 downto 24) <= input_byte;
+		end if;
 	when load1_wait =>
+		if db='0' then
+			state_next <= load2;
+		end if;
 	when load2 =>
+		if db='1' then
+			state_next <= load2_wait;
+			pc(23 downto 16) <= input_byte;
+		end if;
 	when load2_wait =>
+		if db='0' then
+			state_next <= load3;
+		end if;
 	when load3 =>
+		if db='1' then
+			state_next <= load3_wait;
+			pc(15 downto 8) <= input_byte;
+		end if;
 	when load3_wait =>
+		if db='0' then
+			state_next <= load4;
+		end if;
 	when load4 =>
+		if db='1' then
+			state_next <= load4_wait;
+			pc(7 downto 0) <= input_byte;
+		end if;
 	when load4_wait =>
+		if db='0' then
+			state_next <= op;
+		end if;
 	when op =>
+		if  ALU_ready_tick='1' then		
+			instruction_reg <= pc;
+			state_next <= op_wait;
+		end if;
 	when op_wait =>
+		if ALU_done_tick='1' then
+			displayResult <= ALU_result;
+			state_next <= disp1;
+		end if;
 	when disp1=>
+		if db='1' then
+			state_next <= disp1_wait;
+			displayOut <= displayResult(31 downto 24);
+		end if;
 	when disp1_wait=>
+		if db='0' then
+			state_next <= disp2;
+		end if;
 	when disp2=>
+		if db='1' then
+			state_next <= disp2_wait;
+			displayOut <= displayResult(23 downto 16);
+		end if;
 	when disp2_wait=>
+		if db='0' then
+			state_next <= disp3;
+		end if;
 	when disp3=>
+		if db='1' then
+			state_next <= disp3_wait;
+			displayOut <= displayResult(15 downto 8);
+		end if;
 	when disp3_wait=>
+		if db='0' then
+			state_next <= disp4;
+		end if;
 	when disp4=>
+		if db='1' then
+			state_next <= disp4_wait;
+			displayOut <= displayResult(7 downto 0);
+		end if;
 	when disp4_wait=>
-
+		if db='0' then
+			state_next <= idle;
+		end if;
 end case;
 end process;
 
