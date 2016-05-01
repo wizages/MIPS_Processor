@@ -1,0 +1,9 @@
+[Inputs]
+clk
+=registers[31:0]=
+=instruction[31:0]=
+[Outputs]
+ready_tick
+done_tick
+=result[31:0]=
+[BiDir]

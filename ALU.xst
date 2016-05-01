@@ -1,5 +1,5 @@
-set -tmpdir "C:/HDL/MIPS_Processor/xst/projnav.tmp"
-set -xsthdpdir "C:/HDL/MIPS_Processor/xst"
+set -tmpdir "D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst/projnav.tmp"
+set -xsthdpdir "D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst"
 elaborate
 -ifn ALU.prj
 -ifmt mixed
