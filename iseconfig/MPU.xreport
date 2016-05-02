@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-04-30T21:11:10</DateModified>
+  <DateModified>2016-05-01T19:20:04</DateModified>
   <ModuleName>MPU</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/iseconfig/MPU.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2016-05-01T18:47:51</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/iseconfig/MPU.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor\</ImplementationReportsDirectory>
   <DateInitialized>2016-04-22T11:00:34</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
   <viewgroup label="Design Overview" >
-   <view inputState="Unknown" program="implementation" ShowPartitionData="false" type="FPGASummary" file="MPU_summary.html" label="Summary" >
+   <view inputState="Unknown" program="implementation" ShowPartitionData="false" ExpandConstraints="false" type="FPGASummary" file="MPU_summary.html" label="Summary" >
     <toc-item title="Design Overview" target="Design Overview" />
     <toc-item title="Design Utilization Summary" target="Design Utilization Summary" />
     <toc-item title="Performance Summary" target="Performance Summary" />

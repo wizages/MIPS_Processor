@@ -1,26 +1,27 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.10 secs
  
---> Parameter xsthdpdir set to D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst
+--> Parameter xsthdpdir set to C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/type_file.vhd" in Library work.
+Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/type_file.vhd" in Library work.
 Architecture types of Entity types is up to date.
-Compiling vhdl file "D:/Users/dlangerm/Documents/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" in Library work.
-Architecture behavioral of Entity alu is up to date.
+Compiling vhdl file "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" in Library work.
+Entity <alu> compiled.
+ERROR:HDLParsers:3384 - "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/ALU.vhd" Line 73. Size mismatch.  String literal "1111111111111111111111100000000" is of size 31 but is expected to be of size 32.
 
 
 Total REAL time to Xst completion: 0.00 secs
@@ -28,9 +29,9 @@ Total CPU time to Xst completion: 0.15 secs
  
 --> 
 
-Total memory usage is 265592 kilobytes
+Total memory usage is 261180 kilobytes
 
-Number of errors   :    0 (   0 filtered)
+Number of errors   :    1 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

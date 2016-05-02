@@ -1,0 +1,312 @@
+Release 14.7 par P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+T-SMD1024815::  Sun May 01 20:08:11 2016
+
+par -w -intstyle ise -ol high -t 1 MPU_map.ncd MPU.ncd MPU.pcf 
+
+
+Constraints file: MPU.pcf.
+Loading device for application Rf_Device from file '3s400.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+   "MPU" is an NCD, version 3.2, device xc3s400, package ft256, speed -4
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.39 2013-10-13".
+
+
+Device Utilization Summary:
+
+   Number of BUFGMUXs                        8 out of 8     100%
+   Number of External IOBs                  18 out of 173    10%
+      Number of LOCed IOBs                  18 out of 18    100%
+
+   Number of Slices                       1824 out of 3584   50%
+      Number of SLICEMs                    256 out of 1792   14%
+
+
+
+Overall effort level (-ol):   High 
+Placer effort level (-pl):    High 
+Placer cost table entry (-t): 1
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 1 secs 
+Finished initial Timing Analysis.  REAL time: 1 secs 
+
+
+Starting Placer
+Total REAL time at the beginning of Placer: 1 secs 
+Total CPU  time at the beginning of Placer: 1 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:ce2eca15) REAL time: 1 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:ce2eca15) REAL time: 1 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:ce2eca15) REAL time: 1 secs 
+
+Phase 4.2  Initial Clock and IO Placement
+
+Phase 4.2  Initial Clock and IO Placement (Checksum:e40097e2) REAL time: 1 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:e40097e2) REAL time: 1 secs 
+
+Phase 6.8  Global Placement
+...............................................................
+......
+....
+Phase 6.8  Global Placement (Checksum:dc3445cc) REAL time: 2 secs 
+
+Phase 7.5  Local Placement Optimization
+Phase 7.5  Local Placement Optimization (Checksum:dc3445cc) REAL time: 2 secs 
+
+Phase 8.18  Placement Optimization
+Phase 8.18  Placement Optimization (Checksum:d2a0e474) REAL time: 3 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:d2a0e474) REAL time: 3 secs 
+
+Total REAL time to Placer completion: 3 secs 
+Total CPU  time to Placer completion: 3 secs 
+Writing design to file MPU.ncd
+
+
+
+Starting Router
+
+
+Phase  1  : 11517 unrouted;      REAL time: 4 secs 
+
+Phase  2  : 10447 unrouted;      REAL time: 5 secs 
+
+Phase  3  : 4707 unrouted;      REAL time: 6 secs 
+
+Phase  4  : 4707 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
+
+Updating file: MPU.ncd with current fully routed design.
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 10 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 10 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 10 secs 
+WARNING:Route:455 - CLK Net:reg_next_16_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_6_cmp_eq0000 may have excessive skew because 
+      1 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_8_cmp_eq0000 may have excessive skew because 
+      11 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_14_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_22_cmp_eq0000 may have excessive skew because 
+      8 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_26_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_30_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:state_cmp_eq0001 may have excessive skew because 
+      0 CLK pins and 514 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_23_cmp_eq0000 may have excessive skew because 
+      1 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_31_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_27_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_9_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:displayOut_next_not0001 may have excessive skew because 
+      2 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_25_cmp_eq0000 may have excessive skew because 
+      1 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:reg_next_7_cmp_eq0000 may have excessive skew because 
+      16 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:ALU/state_FSM_FFd1 may have excessive skew because 
+      0 CLK pins and 35 NON_CLK pins failed to route using a CLK template.
+
+Total REAL time to Router completion: 11 secs 
+Total CPU time to Router completion: 10 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|           clk_BUFGP |      BUFGMUX0| No   |  607 |  0.060     |  1.074      |
++---------------------+--------------+------+------+------------+-------------+
+|instruction_reg_next |              |      |      |            |             |
+|            _not0001 |      BUFGMUX6| No   |   20 |  0.000     |  1.014      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_4_cmp_eq000 |              |      |      |            |             |
+|                   0 |      BUFGMUX1| No   |   16 |  0.019     |  1.033      |
++---------------------+--------------+------+------+------------+-------------+
+|  reg_next_0_not0001 |      BUFGMUX5| No   |   16 |  0.019     |  1.033      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_1_cmp_eq000 |              |      |      |            |             |
+|                   0 |      BUFGMUX2| No   |   16 |  0.019     |  1.033      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_3_cmp_eq000 |              |      |      |            |             |
+|                   0 |      BUFGMUX7| No   |   16 |  0.019     |  1.033      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_5_cmp_eq000 |              |      |      |            |             |
+|                   0 |      BUFGMUX4| No   |   16 |  0.019     |  1.033      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_2_cmp_eq000 |              |      |      |            |             |
+|                   0 |      BUFGMUX3| No   |   16 |  0.019     |  1.033      |
++---------------------+--------------+------+------+------------+-------------+
+|      alu_op_not0001 |         Local|      |    1 |  0.000     |  0.359      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_15_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.643     |  3.393      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_11_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.432     |  3.111      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_12_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.287     |  2.983      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_16_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  5.529     |  6.593      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_20_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.320     |  3.004      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_24_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.889     |  3.466      |
++---------------------+--------------+------+------+------------+-------------+
+|  ALU/state_FSM_FFd1 |         Local|      |   51 |  0.207     |  3.133      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_13_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.406     |  3.073      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_29_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.170     |  2.927      |
++---------------------+--------------+------+------+------------+-------------+
+|ALU/result_next_not0 |              |      |      |            |             |
+|                 001 |         Local|      |   32 |  0.414     |  2.998      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_6_cmp_eq000 |              |      |      |            |             |
+|                   0 |         Local|      |   16 |  1.369     |  4.083      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_8_cmp_eq000 |              |      |      |            |             |
+|                   0 |         Local|      |   16 |  1.981     |  4.686      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_28_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.603     |  3.242      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_10_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.391     |  3.034      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_14_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  4.530     |  5.238      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_18_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.247     |  2.948      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_22_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  5.317     |  5.867      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_26_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  3.580     |  4.633      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_30_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  3.160     |  4.567      |
++---------------------+--------------+------+------+------------+-------------+
+|    state_cmp_eq0001 |         Local|      |  530 |  0.221     |  2.845      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_23_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  1.434     |  4.086      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_19_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.563     |  3.248      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_31_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  8.457     |  9.728      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_27_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  3.741     |  4.925      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_9_cmp_eq000 |              |      |      |            |             |
+|                   0 |         Local|      |   16 |  3.437     |  5.074      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_17_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.327     |  2.879      |
++---------------------+--------------+------+------+------------+-------------+
+|displayOut_next_not0 |              |      |      |            |             |
+|                 001 |         Local|      |    8 |  1.611     |  2.659      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_25_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  1.232     |  3.841      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_21_cmp_eq00 |              |      |      |            |             |
+|                  00 |         Local|      |   16 |  0.461     |  3.104      |
++---------------------+--------------+------+------+------------+-------------+
+|reg_next_7_cmp_eq000 |              |      |      |            |             |
+|                   0 |         Local|      |   16 |  4.630     |  6.254      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | SETUP       |    11.835ns|     8.165ns|       0|           0
+  50%                                       | HOLD        |     0.980ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 11 secs 
+Total CPU time to PAR completion: 11 secs 
+
+Peak Memory Usage:  316 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 16
+Number of info messages: 0
+
+Writing design to file MPU.ncd
+
+
+
+PAR done!

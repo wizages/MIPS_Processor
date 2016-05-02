@@ -1,5 +1,5 @@
 set -tmpdir "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst/projnav.tmp"
 set -xsthdpdir "C:/Users/7181462/Google Drive/School/CENG342/MIPSprocess/MIPS_Processor/xst"
 elaborate
--ifn ALU.prj
+-ifn debounce.prj
 -ifmt mixed

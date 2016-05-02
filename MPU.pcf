@@ -1,0 +1,326 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun May 01 20:08:07 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "T9" LEVEL 1;
+COMP "displayOut<0>" LOCATE = SITE "K12" LEVEL 1;
+COMP "displayOut<1>" LOCATE = SITE "P14" LEVEL 1;
+COMP "displayOut<2>" LOCATE = SITE "L12" LEVEL 1;
+COMP "displayOut<3>" LOCATE = SITE "N14" LEVEL 1;
+COMP "displayOut<4>" LOCATE = SITE "P13" LEVEL 1;
+COMP "displayOut<5>" LOCATE = SITE "N12" LEVEL 1;
+COMP "displayOut<6>" LOCATE = SITE "P12" LEVEL 1;
+COMP "displayOut<7>" LOCATE = SITE "P11" LEVEL 1;
+COMP "load_byte" LOCATE = SITE "M13" LEVEL 1;
+COMP "input_byte<0>" LOCATE = SITE "F12" LEVEL 1;
+COMP "input_byte<1>" LOCATE = SITE "G12" LEVEL 1;
+COMP "input_byte<2>" LOCATE = SITE "H14" LEVEL 1;
+COMP "input_byte<3>" LOCATE = SITE "H13" LEVEL 1;
+COMP "input_byte<4>" LOCATE = SITE "J14" LEVEL 1;
+COMP "input_byte<5>" LOCATE = SITE "J13" LEVEL 1;
+COMP "input_byte<6>" LOCATE = SITE "K14" LEVEL 1;
+COMP "input_byte<7>" LOCATE = SITE "K13" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP clk = BEL "instruction_reg_0" BEL "instruction_reg_1" BEL
+        "instruction_reg_2" BEL "instruction_reg_3" BEL "instruction_reg_4"
+        BEL "instruction_reg_5" BEL "instruction_reg_6" BEL
+        "instruction_reg_7" BEL "instruction_reg_8" BEL "instruction_reg_9"
+        BEL "instruction_reg_10" BEL "instruction_reg_11" BEL
+        "instruction_reg_12" BEL "instruction_reg_13" BEL "instruction_reg_14"
+        BEL "instruction_reg_15" BEL "instruction_reg_16" BEL
+        "instruction_reg_17" BEL "instruction_reg_18" BEL "instruction_reg_19"
+        BEL "instruction_reg_20" BEL "instruction_reg_21" BEL
+        "instruction_reg_22" BEL "instruction_reg_23" BEL "instruction_reg_24"
+        BEL "instruction_reg_25" BEL "instruction_reg_26" BEL
+        "instruction_reg_27" BEL "instruction_reg_28" BEL "instruction_reg_29"
+        BEL "instruction_reg_30" BEL "instruction_reg_31" BEL "displayOut_0"
+        BEL "displayOut_1" BEL "displayOut_2" BEL "displayOut_3" BEL
+        "displayOut_4" BEL "displayOut_5" BEL "displayOut_6" BEL
+        "displayOut_7" BEL "reg_1_0" BEL "reg_1_1" BEL "reg_1_2" BEL "reg_1_3"
+        BEL "reg_1_4" BEL "reg_1_5" BEL "reg_1_6" BEL "reg_1_7" BEL "reg_1_8"
+        BEL "reg_1_9" BEL "reg_1_10" BEL "reg_1_11" BEL "reg_1_12" BEL
+        "reg_1_13" BEL "reg_1_14" BEL "reg_1_15" BEL "reg_1_16" BEL "reg_1_17"
+        BEL "reg_1_18" BEL "reg_1_19" BEL "reg_1_20" BEL "reg_1_21" BEL
+        "reg_1_22" BEL "reg_1_23" BEL "reg_1_24" BEL "reg_1_25" BEL "reg_1_26"
+        BEL "reg_1_27" BEL "reg_1_28" BEL "reg_1_29" BEL "reg_1_30" BEL
+        "reg_1_31" BEL "reg_12_0" BEL "reg_12_1" BEL "reg_12_2" BEL "reg_12_3"
+        BEL "reg_12_4" BEL "reg_12_5" BEL "reg_12_6" BEL "reg_12_7" BEL
+        "reg_12_8" BEL "reg_12_9" BEL "reg_12_10" BEL "reg_12_11" BEL
+        "reg_12_12" BEL "reg_12_13" BEL "reg_12_14" BEL "reg_12_15" BEL
+        "reg_12_16" BEL "reg_12_17" BEL "reg_12_18" BEL "reg_12_19" BEL
+        "reg_12_20" BEL "reg_12_21" BEL "reg_12_22" BEL "reg_12_23" BEL
+        "reg_12_24" BEL "reg_12_25" BEL "reg_12_26" BEL "reg_12_27" BEL
+        "reg_12_28" BEL "reg_12_29" BEL "reg_12_30" BEL "reg_12_31" BEL
+        "reg_13_0" BEL "reg_13_1" BEL "reg_13_2" BEL "reg_13_3" BEL "reg_13_4"
+        BEL "reg_13_5" BEL "reg_13_6" BEL "reg_13_7" BEL "reg_13_8" BEL
+        "reg_13_9" BEL "reg_13_10" BEL "reg_13_11" BEL "reg_13_12" BEL
+        "reg_13_13" BEL "reg_13_14" BEL "reg_13_15" BEL "reg_13_16" BEL
+        "reg_13_17" BEL "reg_13_18" BEL "reg_13_19" BEL "reg_13_20" BEL
+        "reg_13_21" BEL "reg_13_22" BEL "reg_13_23" BEL "reg_13_24" BEL
+        "reg_13_25" BEL "reg_13_26" BEL "reg_13_27" BEL "reg_13_28" BEL
+        "reg_13_29" BEL "reg_13_30" BEL "reg_13_31" BEL "reg_2_0" BEL
+        "reg_2_1" BEL "reg_2_2" BEL "reg_2_3" BEL "reg_2_4" BEL "reg_2_5" BEL
+        "reg_2_6" BEL "reg_2_7" BEL "reg_2_8" BEL "reg_2_9" BEL "reg_2_10" BEL
+        "reg_2_11" BEL "reg_2_12" BEL "reg_2_13" BEL "reg_2_14" BEL "reg_2_15"
+        BEL "reg_2_16" BEL "reg_2_17" BEL "reg_2_18" BEL "reg_2_19" BEL
+        "reg_2_20" BEL "reg_2_21" BEL "reg_2_22" BEL "reg_2_23" BEL "reg_2_24"
+        BEL "reg_2_25" BEL "reg_2_26" BEL "reg_2_27" BEL "reg_2_28" BEL
+        "reg_2_29" BEL "reg_2_30" BEL "reg_2_31" BEL "reg_3_0" BEL "reg_3_1"
+        BEL "reg_3_2" BEL "reg_3_3" BEL "reg_3_4" BEL "reg_3_5" BEL "reg_3_6"
+        BEL "reg_3_7" BEL "reg_3_8" BEL "reg_3_9" BEL "reg_3_10" BEL
+        "reg_3_11" BEL "reg_3_12" BEL "reg_3_13" BEL "reg_3_14" BEL "reg_3_15"
+        BEL "reg_3_16" BEL "reg_3_17" BEL "reg_3_18" BEL "reg_3_19" BEL
+        "reg_3_20" BEL "reg_3_21" BEL "reg_3_22" BEL "reg_3_23" BEL "reg_3_24"
+        BEL "reg_3_25" BEL "reg_3_26" BEL "reg_3_27" BEL "reg_3_28" BEL
+        "reg_3_29" BEL "reg_3_30" BEL "reg_3_31" BEL "reg_14_0" BEL "reg_14_1"
+        BEL "reg_14_2" BEL "reg_14_3" BEL "reg_14_4" BEL "reg_14_5" BEL
+        "reg_14_6" BEL "reg_14_7" BEL "reg_14_8" BEL "reg_14_9" BEL
+        "reg_14_10" BEL "reg_14_11" BEL "reg_14_12" BEL "reg_14_13" BEL
+        "reg_14_14" BEL "reg_14_15" BEL "reg_14_16" BEL "reg_14_17" BEL
+        "reg_14_18" BEL "reg_14_19" BEL "reg_14_20" BEL "reg_14_21" BEL
+        "reg_14_22" BEL "reg_14_23" BEL "reg_14_24" BEL "reg_14_25" BEL
+        "reg_14_26" BEL "reg_14_27" BEL "reg_14_28" BEL "reg_14_29" BEL
+        "reg_14_30" BEL "reg_14_31" BEL "reg_15_0" BEL "reg_15_1" BEL
+        "reg_15_2" BEL "reg_15_3" BEL "reg_15_4" BEL "reg_15_5" BEL "reg_15_6"
+        BEL "reg_15_7" BEL "reg_15_8" BEL "reg_15_9" BEL "reg_15_10" BEL
+        "reg_15_11" BEL "reg_15_12" BEL "reg_15_13" BEL "reg_15_14" BEL
+        "reg_15_15" BEL "reg_15_16" BEL "reg_15_17" BEL "reg_15_18" BEL
+        "reg_15_19" BEL "reg_15_20" BEL "reg_15_21" BEL "reg_15_22" BEL
+        "reg_15_23" BEL "reg_15_24" BEL "reg_15_25" BEL "reg_15_26" BEL
+        "reg_15_27" BEL "reg_15_28" BEL "reg_15_29" BEL "reg_15_30" BEL
+        "reg_15_31" BEL "reg_4_0" BEL "reg_4_1" BEL "reg_4_2" BEL "reg_4_3"
+        BEL "reg_4_4" BEL "reg_4_5" BEL "reg_4_6" BEL "reg_4_7" BEL "reg_4_8"
+        BEL "reg_4_9" BEL "reg_4_10" BEL "reg_4_11" BEL "reg_4_12" BEL
+        "reg_4_13" BEL "reg_4_14" BEL "reg_4_15" BEL "reg_4_16" BEL "reg_4_17"
+        BEL "reg_4_18" BEL "reg_4_19" BEL "reg_4_20" BEL "reg_4_21" BEL
+        "reg_4_22" BEL "reg_4_23" BEL "reg_4_24" BEL "reg_4_25" BEL "reg_4_26"
+        BEL "reg_4_27" BEL "reg_4_28" BEL "reg_4_29" BEL "reg_4_30" BEL
+        "reg_4_31" BEL "reg_20_0" BEL "reg_20_1" BEL "reg_20_2" BEL "reg_20_3"
+        BEL "reg_20_4" BEL "reg_20_5" BEL "reg_20_6" BEL "reg_20_7" BEL
+        "reg_20_8" BEL "reg_20_9" BEL "reg_20_10" BEL "reg_20_11" BEL
+        "reg_20_12" BEL "reg_20_13" BEL "reg_20_14" BEL "reg_20_15" BEL
+        "reg_20_16" BEL "reg_20_17" BEL "reg_20_18" BEL "reg_20_19" BEL
+        "reg_20_20" BEL "reg_20_21" BEL "reg_20_22" BEL "reg_20_23" BEL
+        "reg_20_24" BEL "reg_20_25" BEL "reg_20_26" BEL "reg_20_27" BEL
+        "reg_20_28" BEL "reg_20_29" BEL "reg_20_30" BEL "reg_20_31" BEL
+        "reg_5_0" BEL "reg_5_1" BEL "reg_5_2" BEL "reg_5_3" BEL "reg_5_4" BEL
+        "reg_5_5" BEL "reg_5_6" BEL "reg_5_7" BEL "reg_5_8" BEL "reg_5_9" BEL
+        "reg_5_10" BEL "reg_5_11" BEL "reg_5_12" BEL "reg_5_13" BEL "reg_5_14"
+        BEL "reg_5_15" BEL "reg_5_16" BEL "reg_5_17" BEL "reg_5_18" BEL
+        "reg_5_19" BEL "reg_5_20" BEL "reg_5_21" BEL "reg_5_22" BEL "reg_5_23"
+        BEL "reg_5_24" BEL "reg_5_25" BEL "reg_5_26" BEL "reg_5_27" BEL
+        "reg_5_28" BEL "reg_5_29" BEL "reg_5_30" BEL "reg_5_31" BEL "reg_21_0"
+        BEL "reg_21_1" BEL "reg_21_2" BEL "reg_21_3" BEL "reg_21_4" BEL
+        "reg_21_5" BEL "reg_21_6" BEL "reg_21_7" BEL "reg_21_8" BEL "reg_21_9"
+        BEL "reg_21_10" BEL "reg_21_11" BEL "reg_21_12" BEL "reg_21_13" BEL
+        "reg_21_14" BEL "reg_21_15" BEL "reg_21_16" BEL "reg_21_17" BEL
+        "reg_21_18" BEL "reg_21_19" BEL "reg_21_20" BEL "reg_21_21" BEL
+        "reg_21_22" BEL "reg_21_23" BEL "reg_21_24" BEL "reg_21_25" BEL
+        "reg_21_26" BEL "reg_21_27" BEL "reg_21_28" BEL "reg_21_29" BEL
+        "reg_21_30" BEL "reg_21_31" BEL "reg_22_0" BEL "reg_22_1" BEL
+        "reg_22_2" BEL "reg_22_3" BEL "reg_22_4" BEL "reg_22_5" BEL "reg_22_6"
+        BEL "reg_22_7" BEL "reg_22_8" BEL "reg_22_9" BEL "reg_22_10" BEL
+        "reg_22_11" BEL "reg_22_12" BEL "reg_22_13" BEL "reg_22_14" BEL
+        "reg_22_15" BEL "reg_22_16" BEL "reg_22_17" BEL "reg_22_18" BEL
+        "reg_22_19" BEL "reg_22_20" BEL "reg_22_21" BEL "reg_22_22" BEL
+        "reg_22_23" BEL "reg_22_24" BEL "reg_22_25" BEL "reg_22_26" BEL
+        "reg_22_27" BEL "reg_22_28" BEL "reg_22_29" BEL "reg_22_30" BEL
+        "reg_22_31" BEL "reg_16_0" BEL "reg_16_1" BEL "reg_16_2" BEL
+        "reg_16_3" BEL "reg_16_4" BEL "reg_16_5" BEL "reg_16_6" BEL "reg_16_7"
+        BEL "reg_16_8" BEL "reg_16_9" BEL "reg_16_10" BEL "reg_16_11" BEL
+        "reg_16_12" BEL "reg_16_13" BEL "reg_16_14" BEL "reg_16_15" BEL
+        "reg_16_16" BEL "reg_16_17" BEL "reg_16_18" BEL "reg_16_19" BEL
+        "reg_16_20" BEL "reg_16_21" BEL "reg_16_22" BEL "reg_16_23" BEL
+        "reg_16_24" BEL "reg_16_25" BEL "reg_16_26" BEL "reg_16_27" BEL
+        "reg_16_28" BEL "reg_16_29" BEL "reg_16_30" BEL "reg_16_31" BEL
+        "reg_6_0" BEL "reg_6_1" BEL "reg_6_2" BEL "reg_6_3" BEL "reg_6_4" BEL
+        "reg_6_5" BEL "reg_6_6" BEL "reg_6_7" BEL "reg_6_8" BEL "reg_6_9" BEL
+        "reg_6_10" BEL "reg_6_11" BEL "reg_6_12" BEL "reg_6_13" BEL "reg_6_14"
+        BEL "reg_6_15" BEL "reg_6_16" BEL "reg_6_17" BEL "reg_6_18" BEL
+        "reg_6_19" BEL "reg_6_20" BEL "reg_6_21" BEL "reg_6_22" BEL "reg_6_23"
+        BEL "reg_6_24" BEL "reg_6_25" BEL "reg_6_26" BEL "reg_6_27" BEL
+        "reg_6_28" BEL "reg_6_29" BEL "reg_6_30" BEL "reg_6_31" BEL "reg_17_0"
+        BEL "reg_17_1" BEL "reg_17_2" BEL "reg_17_3" BEL "reg_17_4" BEL
+        "reg_17_5" BEL "reg_17_6" BEL "reg_17_7" BEL "reg_17_8" BEL "reg_17_9"
+        BEL "reg_17_10" BEL "reg_17_11" BEL "reg_17_12" BEL "reg_17_13" BEL
+        "reg_17_14" BEL "reg_17_15" BEL "reg_17_16" BEL "reg_17_17" BEL
+        "reg_17_18" BEL "reg_17_19" BEL "reg_17_20" BEL "reg_17_21" BEL
+        "reg_17_22" BEL "reg_17_23" BEL "reg_17_24" BEL "reg_17_25" BEL
+        "reg_17_26" BEL "reg_17_27" BEL "reg_17_28" BEL "reg_17_29" BEL
+        "reg_17_30" BEL "reg_17_31" BEL "reg_7_0" BEL "reg_7_1" BEL "reg_7_2"
+        BEL "reg_7_3" BEL "reg_7_4" BEL "reg_7_5" BEL "reg_7_6" BEL "reg_7_7"
+        BEL "reg_7_8" BEL "reg_7_9" BEL "reg_7_10" BEL "reg_7_11" BEL
+        "reg_7_12" BEL "reg_7_13" BEL "reg_7_14" BEL "reg_7_15" BEL "reg_7_16"
+        BEL "reg_7_17" BEL "reg_7_18" BEL "reg_7_19" BEL "reg_7_20" BEL
+        "reg_7_21" BEL "reg_7_22" BEL "reg_7_23" BEL "reg_7_24" BEL "reg_7_25"
+        BEL "reg_7_26" BEL "reg_7_27" BEL "reg_7_28" BEL "reg_7_29" BEL
+        "reg_7_30" BEL "reg_7_31" BEL "reg_8_0" BEL "reg_8_1" BEL "reg_8_2"
+        BEL "reg_8_3" BEL "reg_8_4" BEL "reg_8_5" BEL "reg_8_6" BEL "reg_8_7"
+        BEL "reg_8_8" BEL "reg_8_9" BEL "reg_8_10" BEL "reg_8_11" BEL
+        "reg_8_12" BEL "reg_8_13" BEL "reg_8_14" BEL "reg_8_15" BEL "reg_8_16"
+        BEL "reg_8_17" BEL "reg_8_18" BEL "reg_8_19" BEL "reg_8_20" BEL
+        "reg_8_21" BEL "reg_8_22" BEL "reg_8_23" BEL "reg_8_24" BEL "reg_8_25"
+        BEL "reg_8_26" BEL "reg_8_27" BEL "reg_8_28" BEL "reg_8_29" BEL
+        "reg_8_30" BEL "reg_8_31" BEL "reg_23_0" BEL "reg_23_1" BEL "reg_23_2"
+        BEL "reg_23_3" BEL "reg_23_4" BEL "reg_23_5" BEL "reg_23_6" BEL
+        "reg_23_7" BEL "reg_23_8" BEL "reg_23_9" BEL "reg_23_10" BEL
+        "reg_23_11" BEL "reg_23_12" BEL "reg_23_13" BEL "reg_23_14" BEL
+        "reg_23_15" BEL "reg_23_16" BEL "reg_23_17" BEL "reg_23_18" BEL
+        "reg_23_19" BEL "reg_23_20" BEL "reg_23_21" BEL "reg_23_22" BEL
+        "reg_23_23" BEL "reg_23_24" BEL "reg_23_25" BEL "reg_23_26" BEL
+        "reg_23_27" BEL "reg_23_28" BEL "reg_23_29" BEL "reg_23_30" BEL
+        "reg_23_31" BEL "reg_18_0" BEL "reg_18_1" BEL "reg_18_2" BEL
+        "reg_18_3" BEL "reg_18_4" BEL "reg_18_5" BEL "reg_18_6" BEL "reg_18_7"
+        BEL "reg_18_8" BEL "reg_18_9" BEL "reg_18_10" BEL "reg_18_11" BEL
+        "reg_18_12" BEL "reg_18_13" BEL "reg_18_14" BEL "reg_18_15" BEL
+        "reg_18_16" BEL "reg_18_17" BEL "reg_18_18" BEL "reg_18_19" BEL
+        "reg_18_20" BEL "reg_18_21" BEL "reg_18_22" BEL "reg_18_23" BEL
+        "reg_18_24" BEL "reg_18_25" BEL "reg_18_26" BEL "reg_18_27" BEL
+        "reg_18_28" BEL "reg_18_29" BEL "reg_18_30" BEL "reg_18_31" BEL
+        "reg_24_0" BEL "reg_24_1" BEL "reg_24_2" BEL "reg_24_3" BEL "reg_24_4"
+        BEL "reg_24_5" BEL "reg_24_6" BEL "reg_24_7" BEL "reg_24_8" BEL
+        "reg_24_9" BEL "reg_24_10" BEL "reg_24_11" BEL "reg_24_12" BEL
+        "reg_24_13" BEL "reg_24_14" BEL "reg_24_15" BEL "reg_24_16" BEL
+        "reg_24_17" BEL "reg_24_18" BEL "reg_24_19" BEL "reg_24_20" BEL
+        "reg_24_21" BEL "reg_24_22" BEL "reg_24_23" BEL "reg_24_24" BEL
+        "reg_24_25" BEL "reg_24_26" BEL "reg_24_27" BEL "reg_24_28" BEL
+        "reg_24_29" BEL "reg_24_30" BEL "reg_24_31" BEL "reg_19_0" BEL
+        "reg_19_1" BEL "reg_19_2" BEL "reg_19_3" BEL "reg_19_4" BEL "reg_19_5"
+        BEL "reg_19_6" BEL "reg_19_7" BEL "reg_19_8" BEL "reg_19_9" BEL
+        "reg_19_10" BEL "reg_19_11" BEL "reg_19_12" BEL "reg_19_13" BEL
+        "reg_19_14" BEL "reg_19_15" BEL "reg_19_16" BEL "reg_19_17" BEL
+        "reg_19_18" BEL "reg_19_19" BEL "reg_19_20" BEL "reg_19_21" BEL
+        "reg_19_22" BEL "reg_19_23" BEL "reg_19_24" BEL "reg_19_25" BEL
+        "reg_19_26" BEL "reg_19_27" BEL "reg_19_28" BEL "reg_19_29" BEL
+        "reg_19_30" BEL "reg_19_31" BEL "reg_25_0" BEL "reg_25_1" BEL
+        "reg_25_2" BEL "reg_25_3" BEL "reg_25_4" BEL "reg_25_5" BEL "reg_25_6"
+        BEL "reg_25_7" BEL "reg_25_8" BEL "reg_25_9" BEL "reg_25_10" BEL
+        "reg_25_11" BEL "reg_25_12" BEL "reg_25_13" BEL "reg_25_14" BEL
+        "reg_25_15" BEL "reg_25_16" BEL "reg_25_17" BEL "reg_25_18" BEL
+        "reg_25_19" BEL "reg_25_20" BEL "reg_25_21" BEL "reg_25_22" BEL
+        "reg_25_23" BEL "reg_25_24" BEL "reg_25_25" BEL "reg_25_26" BEL
+        "reg_25_27" BEL "reg_25_28" BEL "reg_25_29" BEL "reg_25_30" BEL
+        "reg_25_31" BEL "reg_9_0" BEL "reg_9_1" BEL "reg_9_2" BEL "reg_9_3"
+        BEL "reg_9_4" BEL "reg_9_5" BEL "reg_9_6" BEL "reg_9_7" BEL "reg_9_8"
+        BEL "reg_9_9" BEL "reg_9_10" BEL "reg_9_11" BEL "reg_9_12" BEL
+        "reg_9_13" BEL "reg_9_14" BEL "reg_9_15" BEL "reg_9_16" BEL "reg_9_17"
+        BEL "reg_9_18" BEL "reg_9_19" BEL "reg_9_20" BEL "reg_9_21" BEL
+        "reg_9_22" BEL "reg_9_23" BEL "reg_9_24" BEL "reg_9_25" BEL "reg_9_26"
+        BEL "reg_9_27" BEL "reg_9_28" BEL "reg_9_29" BEL "reg_9_30" BEL
+        "reg_9_31" BEL "reg_30_0" BEL "reg_30_1" BEL "reg_30_2" BEL "reg_30_3"
+        BEL "reg_30_4" BEL "reg_30_5" BEL "reg_30_6" BEL "reg_30_7" BEL
+        "reg_30_8" BEL "reg_30_9" BEL "reg_30_10" BEL "reg_30_11" BEL
+        "reg_30_12" BEL "reg_30_13" BEL "reg_30_14" BEL "reg_30_15" BEL
+        "reg_30_16" BEL "reg_30_17" BEL "reg_30_18" BEL "reg_30_19" BEL
+        "reg_30_20" BEL "reg_30_21" BEL "reg_30_22" BEL "reg_30_23" BEL
+        "reg_30_24" BEL "reg_30_25" BEL "reg_30_26" BEL "reg_30_27" BEL
+        "reg_30_28" BEL "reg_30_29" BEL "reg_30_30" BEL "reg_30_31" BEL
+        "reg_31_0" BEL "reg_31_1" BEL "reg_31_2" BEL "reg_31_3" BEL "reg_31_4"
+        BEL "reg_31_5" BEL "reg_31_6" BEL "reg_31_7" BEL "reg_31_8" BEL
+        "reg_31_9" BEL "reg_31_10" BEL "reg_31_11" BEL "reg_31_12" BEL
+        "reg_31_13" BEL "reg_31_14" BEL "reg_31_15" BEL "reg_31_16" BEL
+        "reg_31_17" BEL "reg_31_18" BEL "reg_31_19" BEL "reg_31_20" BEL
+        "reg_31_21" BEL "reg_31_22" BEL "reg_31_23" BEL "reg_31_24" BEL
+        "reg_31_25" BEL "reg_31_26" BEL "reg_31_27" BEL "reg_31_28" BEL
+        "reg_31_29" BEL "reg_31_30" BEL "reg_31_31" BEL "reg_26_0" BEL
+        "reg_26_1" BEL "reg_26_2" BEL "reg_26_3" BEL "reg_26_4" BEL "reg_26_5"
+        BEL "reg_26_6" BEL "reg_26_7" BEL "reg_26_8" BEL "reg_26_9" BEL
+        "reg_26_10" BEL "reg_26_11" BEL "reg_26_12" BEL "reg_26_13" BEL
+        "reg_26_14" BEL "reg_26_15" BEL "reg_26_16" BEL "reg_26_17" BEL
+        "reg_26_18" BEL "reg_26_19" BEL "reg_26_20" BEL "reg_26_21" BEL
+        "reg_26_22" BEL "reg_26_23" BEL "reg_26_24" BEL "reg_26_25" BEL
+        "reg_26_26" BEL "reg_26_27" BEL "reg_26_28" BEL "reg_26_29" BEL
+        "reg_26_30" BEL "reg_26_31" BEL "reg_28_0" BEL "reg_28_1" BEL
+        "reg_28_2" BEL "reg_28_3" BEL "reg_28_4" BEL "reg_28_5" BEL "reg_28_6"
+        BEL "reg_28_7" BEL "reg_28_8" BEL "reg_28_9" BEL "reg_28_10" BEL
+        "reg_28_11" BEL "reg_28_12" BEL "reg_28_13" BEL "reg_28_14" BEL
+        "reg_28_15" BEL "reg_28_16" BEL "reg_28_17" BEL "reg_28_18" BEL
+        "reg_28_19" BEL "reg_28_20" BEL "reg_28_21" BEL "reg_28_22" BEL
+        "reg_28_23" BEL "reg_28_24" BEL "reg_28_25" BEL "reg_28_26" BEL
+        "reg_28_27" BEL "reg_28_28" BEL "reg_28_29" BEL "reg_28_30" BEL
+        "reg_28_31" BEL "reg_27_0" BEL "reg_27_1" BEL "reg_27_2" BEL
+        "reg_27_3" BEL "reg_27_4" BEL "reg_27_5" BEL "reg_27_6" BEL "reg_27_7"
+        BEL "reg_27_8" BEL "reg_27_9" BEL "reg_27_10" BEL "reg_27_11" BEL
+        "reg_27_12" BEL "reg_27_13" BEL "reg_27_14" BEL "reg_27_15" BEL
+        "reg_27_16" BEL "reg_27_17" BEL "reg_27_18" BEL "reg_27_19" BEL
+        "reg_27_20" BEL "reg_27_21" BEL "reg_27_22" BEL "reg_27_23" BEL
+        "reg_27_24" BEL "reg_27_25" BEL "reg_27_26" BEL "reg_27_27" BEL
+        "reg_27_28" BEL "reg_27_29" BEL "reg_27_30" BEL "reg_27_31" BEL
+        "reg_29_0" BEL "reg_29_1" BEL "reg_29_2" BEL "reg_29_3" BEL "reg_29_4"
+        BEL "reg_29_5" BEL "reg_29_6" BEL "reg_29_7" BEL "reg_29_8" BEL
+        "reg_29_9" BEL "reg_29_10" BEL "reg_29_11" BEL "reg_29_12" BEL
+        "reg_29_13" BEL "reg_29_14" BEL "reg_29_15" BEL "reg_29_16" BEL
+        "reg_29_17" BEL "reg_29_18" BEL "reg_29_19" BEL "reg_29_20" BEL
+        "reg_29_21" BEL "reg_29_22" BEL "reg_29_23" BEL "reg_29_24" BEL
+        "reg_29_25" BEL "reg_29_26" BEL "reg_29_27" BEL "reg_29_28" BEL
+        "reg_29_29" BEL "reg_29_30" BEL "reg_29_31" BEL "reg_10_0" BEL
+        "reg_10_1" BEL "reg_10_2" BEL "reg_10_3" BEL "reg_10_4" BEL "reg_10_5"
+        BEL "reg_10_6" BEL "reg_10_7" BEL "reg_10_8" BEL "reg_10_9" BEL
+        "reg_10_10" BEL "reg_10_11" BEL "reg_10_12" BEL "reg_10_13" BEL
+        "reg_10_14" BEL "reg_10_15" BEL "reg_10_16" BEL "reg_10_17" BEL
+        "reg_10_18" BEL "reg_10_19" BEL "reg_10_20" BEL "reg_10_21" BEL
+        "reg_10_22" BEL "reg_10_23" BEL "reg_10_24" BEL "reg_10_25" BEL
+        "reg_10_26" BEL "reg_10_27" BEL "reg_10_28" BEL "reg_10_29" BEL
+        "reg_10_30" BEL "reg_10_31" BEL "reg_0_0" BEL "reg_0_1" BEL "reg_0_2"
+        BEL "reg_0_3" BEL "reg_0_4" BEL "reg_0_5" BEL "reg_0_6" BEL "reg_0_7"
+        BEL "reg_0_8" BEL "reg_0_9" BEL "reg_0_10" BEL "reg_0_11" BEL
+        "reg_0_12" BEL "reg_0_13" BEL "reg_0_14" BEL "reg_0_15" BEL "reg_0_16"
+        BEL "reg_0_17" BEL "reg_0_18" BEL "reg_0_19" BEL "reg_0_20" BEL
+        "reg_0_21" BEL "reg_0_22" BEL "reg_0_23" BEL "reg_0_24" BEL "reg_0_25"
+        BEL "reg_0_26" BEL "reg_0_27" BEL "reg_0_28" BEL "reg_0_29" BEL
+        "reg_0_30" BEL "reg_0_31" BEL "reg_11_0" BEL "reg_11_1" BEL "reg_11_2"
+        BEL "reg_11_3" BEL "reg_11_4" BEL "reg_11_5" BEL "reg_11_6" BEL
+        "reg_11_7" BEL "reg_11_8" BEL "reg_11_9" BEL "reg_11_10" BEL
+        "reg_11_11" BEL "reg_11_12" BEL "reg_11_13" BEL "reg_11_14" BEL
+        "reg_11_15" BEL "reg_11_16" BEL "reg_11_17" BEL "reg_11_18" BEL
+        "reg_11_19" BEL "reg_11_20" BEL "reg_11_21" BEL "reg_11_22" BEL
+        "reg_11_23" BEL "reg_11_24" BEL "reg_11_25" BEL "reg_11_26" BEL
+        "reg_11_27" BEL "reg_11_28" BEL "reg_11_29" BEL "reg_11_30" BEL
+        "reg_11_31" BEL "displayResult_0" BEL "displayResult_1" BEL
+        "displayResult_2" BEL "displayResult_3" BEL "displayResult_4" BEL
+        "displayResult_5" BEL "displayResult_6" BEL "displayResult_7" BEL
+        "displayResult_8" BEL "displayResult_9" BEL "displayResult_10" BEL
+        "displayResult_11" BEL "displayResult_12" BEL "displayResult_13" BEL
+        "displayResult_14" BEL "displayResult_15" BEL "displayResult_16" BEL
+        "displayResult_17" BEL "displayResult_18" BEL "displayResult_19" BEL
+        "displayResult_20" BEL "displayResult_21" BEL "displayResult_22" BEL
+        "displayResult_23" BEL "displayResult_24" BEL "displayResult_25" BEL
+        "displayResult_26" BEL "displayResult_27" BEL "displayResult_28" BEL
+        "displayResult_29" BEL "displayResult_30" BEL "displayResult_31" BEL
+        "Debounce/q_reg_0" BEL "Debounce/q_reg_1" BEL "Debounce/q_reg_2" BEL
+        "Debounce/q_reg_3" BEL "Debounce/q_reg_4" BEL "Debounce/q_reg_5" BEL
+        "Debounce/q_reg_6" BEL "Debounce/q_reg_7" BEL "Debounce/q_reg_8" BEL
+        "Debounce/q_reg_9" BEL "Debounce/q_reg_10" BEL "Debounce/q_reg_11" BEL
+        "Debounce/q_reg_12" BEL "Debounce/q_reg_13" BEL "Debounce/q_reg_14"
+        BEL "Debounce/q_reg_15" BEL "Debounce/q_reg_16" BEL
+        "Debounce/q_reg_17" BEL "Debounce/q_reg_18" BEL "state_FSM_FFd3" BEL
+        "state_FSM_FFd2" BEL "Debounce/state_reg_FSM_FFd3" BEL
+        "Debounce/state_reg_FSM_FFd1" BEL "Debounce/state_reg_FSM_FFd2" BEL
+        "ALU/state_FSM_FFd5" BEL "ALU/state_FSM_FFd3" BEL "ALU/state_FSM_FFd2"
+        BEL "ALU/state_FSM_FFd1" BEL "ALU/result_reg_31" BEL
+        "ALU/result_reg_30" BEL "ALU/result_reg_29" BEL "ALU/result_reg_28"
+        BEL "ALU/result_reg_27" BEL "ALU/result_reg_26" BEL
+        "ALU/result_reg_25" BEL "ALU/result_reg_24" BEL "ALU/result_reg_23"
+        BEL "ALU/result_reg_22" BEL "ALU/result_reg_21" BEL
+        "ALU/result_reg_20" BEL "ALU/result_reg_19" BEL "ALU/result_reg_18"
+        BEL "ALU/result_reg_17" BEL "ALU/result_reg_16" BEL
+        "ALU/result_reg_15" BEL "ALU/result_reg_14" BEL "ALU/result_reg_13"
+        BEL "ALU/result_reg_12" BEL "ALU/result_reg_11" BEL
+        "ALU/result_reg_10" BEL "ALU/result_reg_9" BEL "ALU/result_reg_8" BEL
+        "ALU/result_reg_7" BEL "ALU/result_reg_6" BEL "ALU/result_reg_5" BEL
+        "ALU/result_reg_4" BEL "ALU/result_reg_3" BEL "ALU/result_reg_2" BEL
+        "ALU/result_reg_1" BEL "ALU/result_reg_0" BEL "state_FSM_FFd1" BEL
+        "state_FSM_FFd4" BEL "state_FSM_FFd5" BEL "ALU/state_FSM_FFd6" BEL
+        "ALU/state_FSM_FFd7" BEL "ALU/state_FSM_FFd4" BEL "ALU/done_tick" BEL
+        "instruction_reg_16_1" BEL "instruction_reg_21_1" BEL
+        "instruction_reg_17_1" BEL "instruction_reg_22_1" BEL
+        "instruction_reg_18_1" BEL "instruction_reg_19_1" BEL
+        "instruction_reg_24_1" BEL "instruction_reg_15_1" BEL
+        "instruction_reg_14_1" BEL "instruction_reg_13_1" BEL
+        "instruction_reg_23_1" BEL "ALU/done_tick_1" BEL
+        "instruction_reg_25_1" BEL "instruction_reg_20_1" BEL
+        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+SCHEMATIC END;
+

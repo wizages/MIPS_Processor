@@ -72,7 +72,6 @@ end process;process(state_reg,sw,m_tick)
 			when zero =>
 				if sw='1' then
 					state_next <= wait1_1;
-				else state_next <=zero;
 				end if;
 			when wait1_1 =>
 				if sw='0' then

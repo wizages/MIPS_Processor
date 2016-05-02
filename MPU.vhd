@@ -36,30 +36,33 @@ architecture Behavioral of MPU is
 
 
 -- the 32 , 32 bit registers
-signal reg, reg_next : reg_file_type;
+signal reg, reg_next : reg_file_type := (others=> (others=>'0'));
 --the current instruction register
 signal instruction_reg, instruction_reg_next : std_logic_vector (31 downto 0) := (others =>'0');
 --the program counter
 signal pc,pc_next : unsigned(31 downto 0) := (others =>'0');
 signal db : std_logic;
-signal ALU_done_tick , ALU_ready_tick: std_logic;
+signal ALU_done_tick , ALU_ready_tick , alu_op: std_logic := '0';
 signal ALU_result : std_logic_vector(31 downto 0) := (others =>'0');
 signal displayResult,displayResult_next : std_logic_vector(31 downto 0) := (others=>'0');
 type MPU_states is (load1,load1_wait,load2,load2_wait,load3,
 					load3_wait,load4,load4_wait,op,op_wait,disp1,disp1_wait,disp2,disp2_wait,disp3,disp3_wait,disp4,disp4_wait);
 signal state, state_next : MPU_states := load1;
+signal disp,displayOut_next :std_logic_vector(7 downto 0) := "00000000";
 
-begin
+begin	
+
 process (clk,reset)
 begin
+		
 	if(rising_edge(clk)) then
 		state <= state_next;
 		pc <= pc_next;
 		reg <= reg_next;
 		instruction_reg <= instruction_reg_next;
-		displayResult <=displayResult_next;
+		displayResult <= displayResult_next;
+		displayOut <= displayOut_next;
 	end if;
-	
 	
 end process;
 
@@ -70,20 +73,22 @@ ALU : entity work.ALU(Behavioral)
 					result => ALU_result,
 					ready_tick => ALU_ready_tick,
 					done_tick => ALU_done_tick,
+					op => alu_op, 
 					clk => clk);
 					
-Debounce : entity work.debounce(Behavioral) port map ( clk => clk, reset => reset, sw => load_byte, db => db);
+Debounce : entity work.debounce(Behavioral) port map ( clk => clk, reset => '0',sw => load_byte, db => db);
 					
-process(state, db, input_byte, ALU_ready_tick,pc, ALU_done_tick, ALU_result,displayResult)
+process(state, db, input_byte, ALU_ready_tick,pc, ALU_done_tick, ALU_result,displayResult,instruction_reg)
 begin			
 
 state_next <= state;
-				
+
 case (state) is
 	when load1 => 
+		displayOut_next <= input_byte;
 		if db='1' then 
 			state_next <= load1_wait;
-			instruction_reg_next(31 downto 24) <= input_byte;
+			instruction_reg_next <= input_byte & instruction_reg(23 downto 0);	
 		end if;
 		
 	when load1_wait =>
@@ -92,9 +97,10 @@ case (state) is
 		end if;
 		
 	when load2 =>
+		displayOut_next <= input_byte;
 		if db='1' then
 			state_next <= load2_wait;
-			instruction_reg_next(23 downto 16) <= input_byte;
+			instruction_reg_next <= instruction_reg(31 downto 24) & input_byte & instruction_reg(15 downto 0);
 		end if;
 		
 	when load2_wait =>
@@ -103,9 +109,10 @@ case (state) is
 		end if;
 		
 	when load3 =>
+		displayOut_next <= input_byte;
 		if db='1' then
 			state_next <= load3_wait;
-			instruction_reg_next(15 downto 8) <= input_byte;
+			instruction_reg_next <= instruction_reg(31 downto 16) & input_byte & instruction_reg(7 downto 0);
 		end if;
 		
 	when load3_wait =>
@@ -114,9 +121,10 @@ case (state) is
 		end if;
 		
 	when load4 =>
+		displayOut_next <= input_byte;
 		if db='1' then
 			state_next <= load4_wait;
-			instruction_reg_next(7 downto 0) <= input_byte;
+			instruction_reg_next <= instruction_reg(31 downto 8) & input_byte;
 		end if;
 		
 	when load4_wait =>
@@ -128,21 +136,28 @@ case (state) is
 		if  ALU_ready_tick='1' then		
 			pc_next <= pc+1;
 			state_next <= op_wait;
+			alu_op <= '1';
 		end if;
 		
-when op_wait =>
+	when op_wait =>
+		displayOut_next <="10000001";
 		if ALU_done_tick='1' then
 			displayResult_next <= ALU_result;
+			reg_next(to_integer(unsigned(instruction_reg(15 downto 11)))) <= ALU_result;
 			state_next <= disp1;
+			alu_op <= '0';
+			instruction_reg_next <= (others => '0');
 		end if;
-		
+
+
 	when disp1=>
+		displayOut_next <= displayResult(7 downto 0);
 		if db='1' then
 			state_next <= disp1_wait;
-			displayOut <= displayResult(31 downto 24);
+			displayOut_next <= displayResult(31 downto 24);
 		end if;
 		
-when disp1_wait=>
+	when disp1_wait=>
 		if db='0' then
 			state_next <= disp2;
 		end if;
@@ -150,7 +165,7 @@ when disp1_wait=>
 	when disp2=>
 		if db='1' then
 			state_next <= disp2_wait;
-			displayOut <= displayResult(23 downto 16);
+			displayOut_next <= displayResult(23 downto 16);
 		end if;
 		
 	when disp2_wait=>
@@ -161,7 +176,7 @@ when disp1_wait=>
 	when disp3=>
 		if db='1' then
 			state_next <= disp3_wait;
-			displayOut <= displayResult(15 downto 8);
+			displayOut_next <= displayResult(15 downto 8);
 		end if;
 		
 	when disp3_wait=>
@@ -172,7 +187,7 @@ when disp1_wait=>
 	when disp4=>
 		if db='1' then
 			state_next <= disp4_wait;
-			displayOut <= displayResult(7 downto 0);
+			displayOut_next <= displayResult(7 downto 0);
 		end if;
 		
 	when disp4_wait=>

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\7181462\Google Drive\School\CENG342\MIPSprocess\MIPS_Processor\MPU.ncd
+OUTFILE=C:\Users\7181462\Google Drive\School\CENG342\MIPSprocess\MIPS_Processor\MPU.bit
+FAMILY=Spartan3
+PART=xc3s400-4ft256
+WORKINGDIR=C:\Users\7181462\Google Drive\School\CENG342\MIPSprocess\MIPS_Processor
+LICENSE=WebPack
+USER_INFO=211141395_0_0_713

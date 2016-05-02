@@ -1,0 +1,44 @@
+#========================================================
+#    Pin assigbment for Xilinx 
+#    Spartan-3 Starter board
+#========================================================
+
+#========================================================
+# clock and reset
+#========================================================
+NET "clk"    LOC = "T9" ;
+
+#========================================================
+# buttons & switches 
+#========================================================
+# 4 push buttons 
+NET "load_byte"   LOC = "M13";
+
+# 8 slide switches
+NET "input_byte<0>"  LOC = "F12";
+NET "input_byte<1>"  LOC = "G12";
+NET "input_byte<2>"  LOC = "H14";
+NET "input_byte<3>"  LOC = "H13";
+NET "input_byte<4>"  LOC = "J14";
+NET "input_byte<5>"  LOC = "J13";
+NET "input_byte<6>"  LOC = "K14";
+NET "input_byte<7>"  LOC = "K13";
+
+#========================================================
+# 8 discrete led
+#========================================================
+NET "displayOut<0>"  LOC = "K12";
+NET "displayOut<1>"  LOC = "P14";
+NET "displayOut<2>"  LOC = "L12";
+NET "displayOut<3>"  LOC = "N14";
+NET "displayOut<4>"  LOC = "P13";
+NET "displayOut<5>"  LOC = "N12";
+NET "displayOut<6>"  LOC = "P12";
+NET "displayOut<7>"  LOC = "P11";
+
+#========================================================
+# Timing constraint of S3 50-MHz onboard oscillator
+# name of the clock signal is clk
+#========================================================
+NET "clk" TNM_NET = "clk";
+TIMESPEC "TS_clk" = PERIOD "clk" 20 ns HIGH 50 %;

@@ -17,7 +17,6 @@ entity ALU is
 				registers : reg_file_type;
 				instruction : in std_logic_vector(31 downto 0);
 				clk : in std_logic;
-				op : in std_logic;
 				result : out std_logic_vector (31 downto 0);
 				ready_tick : out std_logic;
 				done_tick : out std_logic
@@ -29,7 +28,7 @@ architecture Behavioral of ALU is
 
 
 signal state, state_next : ALU_state_type;
-signal result_reg,result_next : unsigned(31 downto 0) := (others =>'0');
+signal result_reg : unsigned(31 downto 0);
 signal done_next,ready_next : std_logic;
 
 begin
@@ -40,26 +39,21 @@ process(clk)
 			state <= state_next;
 			done_tick <= done_next;
 			ready_tick <=ready_next;
-			result_reg <= result_next;
 		end if;
 end process;
 
 
-process(state,instruction,op)
+process(state,instruction)
 begin
 
 --insert defaults
 state_next <= idle;
+result <= (others => '0');
 done_next <='0';
 ready_next <='0';
-
 	case state is
-		when idle =>
-			if(op <= '0') then
-				state_next <= idle;
-				done_next <='1';
-				ready_next <= '1';
-			elsif(instruction = "00000000000000000000000000000000") then
+		when idle =>	
+			if(instruction = "00000000000000000000000000000000") then
 				state_next <= idle;
 				ready_next <= '1';
 			elsif (instruction ( 5 downto 0) = "100000") then
@@ -72,43 +66,32 @@ ready_next <='0';
 				state_next <= ALU_Or;
 				
 			-- not really sure if this goes in the ALU or not...
-			elsif (instruction (31 downto 26) = "000100") then
+			elsif (instruction (5 downto 0) = "100101") then
 				state_next <= ALU_beq;	
-			else
-				state_next <= op_complete;
-				result_next <= "11111111111111111111111111111111"; 
 			end if;
 
 		when ALU_add =>
 			--not sure if accessing goes here or mpu...
-			result_next <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21))))) + unsigned(registers(to_integer(unsigned(instruction(20 downto 16)))));
+			result_reg <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21))))) + unsigned(registers(to_integer(unsigned(instruction(20 downto 16)))));
 			state_next <= op_complete;
 		
 		when ALU_sub =>
-			result_next <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21))))) - unsigned(registers(to_integer(unsigned(instruction(20 downto 16)))));
+			result_reg <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21))))) - unsigned(registers(to_integer(unsigned(instruction(20 downto 16)))));
 			state_next <= op_complete;
 			
 		when ALU_and =>
-			result_next <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21)))) and registers(to_integer(unsigned(instruction(20 downto 16)))));
+			result_reg <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21)))) and registers(to_integer(unsigned(instruction(20 downto 16)))));
 			state_next <= op_complete;
 			
 		when ALU_Or =>
-			result_next <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21)))) or registers(to_integer(unsigned(instruction(20 downto 16)))));
+			result_reg <= unsigned(registers(to_integer(unsigned(instruction(25 downto 21)))) or registers(to_integer(unsigned(instruction(20 downto 16)))));
 			state_next <= op_complete;
 		
 		--again still not sure about the nature of this one
-		when ALU_beq => 
-			if (registers(to_integer(unsigned(instruction(25 downto 21)))) = registers(to_integer(unsigned(instruction(20 downto 16)))))  then
-				result_next <= "00000000000000000000000000000001";
-				state_next <= op_complete;
-			else
-				result_next <= (others => '0');
-				state_next <= op_complete;
-			end if;
+		when ALU_beq =>
 		
 		when op_complete =>
 			result <= std_logic_vector(result_reg);
-			result_next <= result_reg;
 			done_next <='1';
 			ready_next <='1';
 	end case;
